@@ -1,0 +1,89 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:900);
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+*:before, *:after {
+  display: block;
+}
+
+body {
+  background: url(http://i1284.photobucket.com/albums/a574/meecrobe/bg_zpsa69b683b.png);
+}
+
+.subscribe-form {
+  width: 280px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -140px;
+  background: url(http://i1284.photobucket.com/albums/a574/meecrobe/bor-top_zps92b00326.png) top center no-repeat, url(http://i1284.photobucket.com/albums/a574/meecrobe/bor-bot_zpsc0b729ec.png) bottom center no-repeat, url(http://i1284.photobucket.com/albums/a574/meecrobe/form-bg_zpsac871f59.png);
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 150px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.subscribe-form form {
+  width: 282px;
+  height: 180px;
+  margin-top: 10px;
+  border-top: 1px solid #faf8f4;
+  border-bottom: 1px solid #faf8f4;
+  -ms-box-shadow: inset 0 0 0 1px #e7e0cf;
+  box-shadow: inset 0 0 0 1px #e7e0cf;
+  margin-left: -1px;
+}
+.subscribe-form form .heading {
+  width: 280px;
+  height: 20px;
+  line-height: 20px;
+  margin-top: 25px;
+  background: url(http://i1284.photobucket.com/albums/a574/meecrobe/dashes_zps2c74672d.png) left center no-repeat, url(http://i1284.photobucket.com/albums/a574/meecrobe/dashes_zps2c74672d.png) right center no-repeat;
+  font-size: 14px;
+  color: #d36f39;
+  text-transform: uppercase;
+  font-family: "Lato", serif;
+  letter-spacing: 7px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  padding-left: 7px;
+}
+.subscribe-form form input[type="email"] {
+  width: 234px;
+  height: 34px;
+  background: #f3e6db;
+  border-radius: 5px;
+  border: 1px solid #fbfaf3;
+  -ms-box-shadow: inset 0 0 0 1px #e4c9b4;
+  box-shadow: inset 0 0 0 1px #e4c9b4;
+  padding: 0 18px 0 18px;
+  font-family: Georgia, sans-serif;
+  font-size: 12px;
+  font-style: italic;
+  color: #ba9e88;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+  margin: 20px 0 18px 0;
+}
+.subscribe-form form input[type="submit"] {
+  width: 234px;
+  height: 33px;
+  border-radius: 5px;
+  background: #d36f39;
+  color: #fbece6;
+  font-size: 12px;
+  font-family: "Lato", serif;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  text-shadow: 0 -1px 0 #bc3507;
+  padding-left: 13px;
+  border: 1px solid #bc3507;
+  -ms-box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.42);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.42);
+}
+.subscribe-form form input[type="submit"]:active {
+  -ms-box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.42);
+  box-shadow: inset 0 1px 0 1px rgba(255, 255, 255, 0.42);
+  position: relative;
+  top: 1px;
+}
