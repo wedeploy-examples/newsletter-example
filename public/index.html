@@ -15,5 +15,45 @@
       <input type="submit" value="SUBSCRIBE">
     </form>
   </div>
+
+  <script src="http://cdn.wedeploy.com/api/1.0.0-alpha.7/wedeploy-min.js"></script>
+  <script>
+  var heading = document.querySelector('.heading');
+  var email = document.querySelector('.email');
+  var form = document.querySelector('form');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    WeDeploy
+      .url('http://email.newsletter.wedeploy.me/emails')
+      .auth('dummyMasterToken')
+      .form('from', 'noreply@wedeploy.com')
+      .form('to', form.email.value)
+      .form('subject', 'Thanks for subscribing!')
+      .form('message', 'No worries, this is just a demo :)')
+      .post()
+      .then(function(response) {
+        if (response.succeeded()) {
+          heading.innerHTML = 'DONE :)';
+          console.info('Email ID:', response.body());
+
+          form.reset();
+        }
+        else {
+          heading.innerHTML = 'ERROR :/';
+          console.error('Error:', response.body());
+        }
+      })
+      .catch(function(error) {
+        heading.innerHTML = 'ERROR :/';
+        console.error('Error:', error);
+      });
+  });
+
+  email.addEventListener('focus', function(e) {
+    heading.innerHTML = 'NEWSLETTER';
+  });
+  </script>
 </body>
 </html>
