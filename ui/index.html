@@ -16,7 +16,7 @@
     </form>
   </div>
 
-  <script src="http://cdn.wedeploy.com/api/1.0.0-alpha.7/wedeploy.js"></script>
+  <script src="https://cdn.wedeploy.com/api/2.3.1/wedeploy.js"></script>
   <script>
   var heading = document.querySelector('.heading');
   var email = document.querySelector('.email');
@@ -26,24 +26,18 @@
     e.preventDefault();
 
     WeDeploy
-      .url('http://email.newsletter.wedeploy.io/emails')
-      .auth('dummyMasterToken')
-      .form('from', 'noreply@wedeploy.com')
-      .form('to', form.email.value)
-      .form('subject', 'Thanks for subscribing!')
-      .form('message', 'No worries, this is just a demo :)')
-      .post()
-      .then(function(response) {
-        if (response.succeeded()) {
-          heading.innerHTML = 'DONE :)';
-          console.info('Email ID:', response.body());
+      .email('email-newsletter.wedeploy.io')
+      .auth('dddc6fdc-a354-4bbb-be33-e62849464c6d')
+      .from('noreply@wedeploy.com')
+      .to(form.email.value)
+      .subject('Thanks for subscribing!')
+      .message('No worries, this is just a demo :)')
+      .send()
+      .then(function(emailId) {
+        heading.innerHTML = 'DONE :)';
+        console.info('Email ID:', emailId);
 
-          form.reset();
-        }
-        else {
-          heading.innerHTML = 'ERROR :/';
-          console.error('Error:', response.body());
-        }
+        form.reset();
       })
       .catch(function(error) {
         heading.innerHTML = 'ERROR :/';
